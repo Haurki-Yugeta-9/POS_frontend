@@ -18,7 +18,7 @@ const ProductInfoForm: React.FC<ProductInfoFormProps> = ({ product, onAddToCart 
     <div className="p-4 bg-gray-50 rounded-lg shadow">
       <div className="mb-4">
         <label htmlFor="janCode" className="block text-sm font-medium text-gray-700 mb-1">
-          コード表示エリア
+          コード
         </label>
         <input
           type="text"
@@ -31,7 +31,7 @@ const ProductInfoForm: React.FC<ProductInfoFormProps> = ({ product, onAddToCart 
       </div>
       <div className="mb-4">
         <label htmlFor="productName" className="block text-sm font-medium text-gray-700 mb-1">
-          名称表示エリア
+          商品名
         </label>
         <input
           type="text"
@@ -44,7 +44,7 @@ const ProductInfoForm: React.FC<ProductInfoFormProps> = ({ product, onAddToCart 
       </div>
       <div className="mb-6">
         <label htmlFor="productPrice" className="block text-sm font-medium text-gray-700 mb-1">
-          単価表示エリア
+          単価
         </label>
         <input
           type="text"

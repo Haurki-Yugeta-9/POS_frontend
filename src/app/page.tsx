@@ -88,7 +88,7 @@ export default function HomePage() {
   return (
     <div className="container mx-auto p-4 max-w-2xl bg-gray-100 min-h-screen">
       <header className="mb-6">
-        <h1 className="text-3xl font-bold text-center text-blue-700">ポップアップストアセルフレジ</h1>
+        <h1 className="text-3xl font-bold text-center text-blue-700">ポップアップストア</h1>
       </header>
 
       <main className="space-y-6">
@@ -145,7 +145,7 @@ export default function HomePage() {
       />
 
       <footer className="text-center mt-10 py-4 text-sm text-gray-500">
-        <p>&copy; {new Date().getFullYear()} テクワン株式会社 ポップアップストア</p>
+        <p>&copy; {new Date().getFullYear()} テクワン株式会社</p>
       </footer>
     </div>
   );
