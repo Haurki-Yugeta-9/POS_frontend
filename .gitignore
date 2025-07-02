@@ -1,0 +1,20 @@
+# Node.js / Next.js（フロントエンド用）
+node_modules/
+.next/
+out/
+.env.local
+.env.development
+.env.production
+
+# OS・エディタ関連
+.DS_Store
+*.log
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# その他
+coverage/
+dist/
+build/
