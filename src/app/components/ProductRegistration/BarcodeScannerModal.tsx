@@ -20,6 +20,7 @@
 //   // エラーメッセージを一元管理するため、一つのステートに統合
 //   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 //   const [isScannerPaused, setIsScannerPaused] = useState(false);
+//   const [facingMode, setFacingMode] = useState<'environment' | 'user'>('user');
 //   const scannerContainerRef = useRef<HTMLDivElement>(null);
 
 //   const {
@@ -67,7 +68,14 @@
 //     console.error("[Modal] Scanner error:", error);
 //     let message = "スキャンエラーが発生しました。";
 //     if (error instanceof Error) {
-//       message = error.message;
+//       // カメラ許可がない場合のエラー名は NotAllowedError など
+//       if (error.name === "NotAllowedError") {
+//         message = "カメラの利用が許可されていません。ブラウザのアドレスバー横のカメラアイコンから許可してください。";
+//       } else if (error.name === "NotFoundError") {
+//         message = "カメラデバイスが見つかりません。";
+//       } else {
+//         message = error.message;
+//       }
 //     } else if (typeof error === 'string') {
 //       message = error;
 //     }
@@ -99,9 +107,21 @@
 //     onClose();
 //   };
 
+//   // カメラ切り替えボタン
+//   const handleToggleCamera = () => {
+//     setFacingMode((prev) => (prev === "environment" ? "user" : "user"));
+//   };
+
 //   return (
 //     <Modal isOpen={isOpen} onClose={handleCloseModal} title="バーコードスキャナー">
 //       <div className="relative w-full max-w-md p-4 mx-auto bg-white rounded-lg shadow-lg flex flex-col items-center justify-center">
+//         <button
+//           onClick={handleToggleCamera}
+//           className="mb-2 px-2 py-1 text-xs bg-gray-200 rounded"
+//         >
+//           カメラ切替（{facingMode === "user" ? "外側" : "内側"}）
+//         </button>
+               
 //         <div className="w-full aspect-square max-w-xs mb-4" ref={scannerContainerRef}>
 //           {isOpen && (
 //             <div className="relative w-full h-full">
@@ -123,7 +143,7 @@
 //                 constraints={{
 //                   width: { ideal: 640 },
 //                   height: { ideal: 480 },
-//                   facingMode: "environment",
+//                   facingMode: facingMode,
 //                   aspectRatio: { ideal: 1 },
 //                   frameRate: { max: 15 }
 //                 }}

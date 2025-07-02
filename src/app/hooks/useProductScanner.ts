@@ -1,3 +1,4 @@
+// // Vercel用に作り替えるため一旦作り直し
 // import { useState, useCallback } from 'react';
 // // Quagga のインポートを削除
 // // import Quagga, { QuaggaJSResultObject as QuaggaResult } from '@ericblade/quagga2';

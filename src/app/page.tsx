@@ -1,4 +1,4 @@
-// Vercel用
+// Vercel用に作り直し
 'use client'  // クライアントコンポーネントとして動作させる
 
 import { useEffect, useState } from 'react'
@@ -71,7 +71,7 @@ export default function Page() {
 }
 
 
-
+// 
 // 'use client';
 
 // import React, { useState } from 'react';
